@@ -1,8 +1,6 @@
 # CV APP
-> **Note**
->
-> This is a note.
 
 > **Warning**
->
-> This is a warning.
+> This project is under development.
+
+This is my solution of [cv-app project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application) of The Odin Project
