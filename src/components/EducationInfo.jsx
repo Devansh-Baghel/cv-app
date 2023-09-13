@@ -69,7 +69,17 @@ function Education() {
           {isEditing ? "Submit" : "Edit"}
         </button>
       </div>
-      <Preview educationData={cvData} />
+      <h2>Education</h2>
+      {cvData ? (
+        <div>
+          <p>Title: {cvData.title}</p>
+          <p>School Name: {cvData.schoolName}</p>
+          <p>Start Date: {cvData.startDate}</p>
+          <p>End Date: {cvData.endDate}</p>
+        </div>
+      ) : (
+        <p>Please submit to see your CV preview.</p>
+      )}
     </div>
   );
 }
