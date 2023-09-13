@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Preview from "./Preview";
 
 function GeneralInfo() {
   const [name, setName] = useState("");

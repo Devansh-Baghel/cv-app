@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React from 'react'
+import { useState } from 'react';
 
-function Education() {
+function Work() {
   const [title, setTitle] = useState("");
-  const [schoolName, setSchoolName] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [about, setAbout] = useState("");
   const [cvData, setCvData] = useState(null);
   const [isEditing, setIsEditing] = useState(true);
 
   const handleSubmit = () => {
     const cvInfo = {
       title,
-      schoolName,
+      companyName,
       startDate,
       endDate,
+      about,
     };
 
     setCvData(cvInfo);
@@ -27,20 +30,26 @@ function Education() {
   return (
     <div>
       <div>
-        <h2>Education</h2>
+        <h2>Work</h2>
         {isEditing ? (
           <div>
             <input
               type="text"
-              placeholder="Title of Study"
+              placeholder="Title of Job"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
             <input
               type="text"
-              placeholder="Name of Acedemic Institution"
-              value={schoolName}
-              onChange={(e) => setSchoolName(e.target.value)}
+              placeholder="Company Name"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="About the Job"
+              value={about}
+              onChange={(e) => setAbout(e.target.value)}
             />
             <input
               type="text"
@@ -54,12 +63,12 @@ function Education() {
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
             />
-            {/* <button onClick={handleSubmit}>Submit</button> */}
           </div>
         ) : (
           <div>
             <p>Title: {cvData ? cvData.title : ""}</p>
-            <p>School Name: {cvData ? cvData.schoolName : ""}</p>
+            <p>Company Name: {cvData ? cvData.companyName : ""}</p>
+            <p>About The Job: {cvData ? cvData.about : ""}</p>
             <p>Start Date: {cvData ? cvData.startDate : ""}</p>
             <p>End Date: {cvData ? cvData.endDate : ""}</p>
           </div>
@@ -68,11 +77,12 @@ function Education() {
           {isEditing ? "Submit" : "Edit"}
         </button>
       </div>
-      <h2>Education</h2>
+      <h2>Work</h2>
       {cvData ? (
         <div>
           <p>Title: {cvData.title}</p>
-          <p>School Name: {cvData.schoolName}</p>
+          <p>Company Name: {cvData.companyName}</p>
+          <p>About The Job: {cvData.about}</p>
           <p>Start Date: {cvData.startDate}</p>
           <p>End Date: {cvData.endDate}</p>
         </div>
@@ -83,4 +93,4 @@ function Education() {
   );
 }
 
-export default Education;
+export default Work
