@@ -68,7 +68,7 @@ function Education() {
         </button>
       </div>
 
-      <div>
+      <div id="preview">
         <h2>Education</h2>
         {cvData ? (
           <div>

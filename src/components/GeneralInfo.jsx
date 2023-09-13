@@ -60,7 +60,7 @@ function GeneralInfo() {
         </button>
       </div>
 
-      <div>
+      <div id="preview">
         <h1>CV Preview</h1>
         <h2>General Information</h2>
         {cvData ? (

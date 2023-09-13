@@ -78,7 +78,7 @@ function Work() {
         </button>
       </div>
 
-      <div>
+      <div id='preview'>
         <h2>Work</h2>
         {cvData ? (
           <div>
