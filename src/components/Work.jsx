@@ -28,7 +28,7 @@ function Work() {
   };
 
   return (
-    <div>
+    <div id='work-info'>
       <div>
         <h2>Work</h2>
         {isEditing ? (
@@ -77,18 +77,21 @@ function Work() {
           {isEditing ? "Submit" : "Edit"}
         </button>
       </div>
-      <h2>Work</h2>
-      {cvData ? (
-        <div>
-          <p>Title: {cvData.title}</p>
-          <p>Company Name: {cvData.companyName}</p>
-          <p>About The Job: {cvData.about}</p>
-          <p>Start Date: {cvData.startDate}</p>
-          <p>End Date: {cvData.endDate}</p>
-        </div>
-      ) : (
-        <p>Please submit to see your CV preview.</p>
-      )}
+
+      <div>
+        <h2>Work</h2>
+        {cvData ? (
+          <div>
+            <p>Title: {cvData.title}</p>
+            <p>Company Name: {cvData.companyName}</p>
+            <p>About The Job: {cvData.about}</p>
+            <p>Start Date: {cvData.startDate}</p>
+            <p>End Date: {cvData.endDate}</p>
+          </div>
+        ) : (
+          <p>Please submit to see your CV preview.</p>
+        )}
+      </div>
     </div>
   );
 }

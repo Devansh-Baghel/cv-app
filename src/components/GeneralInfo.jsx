@@ -23,7 +23,7 @@ function GeneralInfo() {
   };
 
   return (
-    <div>
+    <div id="general-info">
       <div>
         <h2>General Information</h2>
         {isEditing ? (
@@ -59,17 +59,20 @@ function GeneralInfo() {
           {isEditing ? "Submit" : "Edit"}
         </button>
       </div>
-      <h1>CV Preview</h1>
-      <h2>General Information</h2>
-      {cvData ? (
-        <div>
-          <p>Name: {cvData.name}</p>
-          <p>Email: {cvData.email}</p>
-          <p>Phone: {cvData.phone}</p>
-        </div>
-      ) : (
-        <p>Please submit to see your CV preview.</p>
-      )}
+
+      <div>
+        <h1>CV Preview</h1>
+        <h2>General Information</h2>
+        {cvData ? (
+          <div>
+            <p>Name: {cvData.name}</p>
+            <p>Email: {cvData.email}</p>
+            <p>Phone: {cvData.phone}</p>
+          </div>
+        ) : (
+          <p>Please submit to see your CV preview.</p>
+        )}
+      </div>
     </div>
   );
 }

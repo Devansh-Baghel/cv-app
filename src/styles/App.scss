@@ -1,0 +1,11 @@
+html {
+  background-color: red;
+}
+
+#education-info, #work-info, #general-info {
+  background-color: green;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
