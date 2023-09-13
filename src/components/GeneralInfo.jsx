@@ -24,7 +24,7 @@ function GeneralInfo() {
 
   return (
     <div id="general-info">
-      <div>
+      <div id="input">
         <h2>General Information</h2>
         {isEditing ? (
           <div>

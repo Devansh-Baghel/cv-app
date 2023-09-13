@@ -26,7 +26,7 @@ function Education() {
 
   return (
     <div id="education-info">
-      <div>
+      <div id="input">
         <h2>Education</h2>
         {isEditing ? (
           <div>

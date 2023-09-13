@@ -29,7 +29,7 @@ function Work() {
 
   return (
     <div id='work-info'>
-      <div>
+      <div id="input">
         <h2>Work</h2>
         {isEditing ? (
           <div>

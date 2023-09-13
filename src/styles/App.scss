@@ -1,11 +1,25 @@
-html {
-  background-color: red;
-}
-
 #education-info, #work-info, #general-info {
-  background-color: green;
-
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#input {
+  width: 300px;
+}
+
+input {
+  width: 250px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+
+button {
+  padding: 5px 20px;
+  border-radius: 10px;
+  border: 3px solid darkgrey;
 }
