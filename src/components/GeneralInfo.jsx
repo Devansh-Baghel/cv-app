@@ -5,8 +5,8 @@ function GeneralInfo() {
   const [email, setEmail] = useState("johndoe@gmail.com");
   const [phone, setPhone] = useState("+44 3245 5521 5521");
   const [address, setAddress] = useState("London, UK");
-  const [cvData, setCvData] = useState(null);
-  const [isEditing, setIsEditing] = useState(true);
+  const [cvData, setCvData] = useState({name, email, phone, address});
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleSubmit = () => {
     const cvInfo = {
