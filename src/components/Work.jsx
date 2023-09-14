@@ -2,13 +2,14 @@ import React from 'react'
 import { useState } from 'react';
 
 function Work() {
-  const [title, setTitle] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [about, setAbout] = useState("");
-  const [cvData, setCvData] = useState(null);
-  const [isEditing, setIsEditing] = useState(true);
+  const [title, setTitle] = useState("UX Research Assistant");
+  const [companyName, setCompanyName] = useState("Black Mesa Labs");
+  const [startDate, setStartDate] = useState("04/2018");
+  const [endDate, setEndDate] = useState("02/2019");
+  const [about, setAbout] = useState("Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.");
+  const [location, setLocation] = useState("Berlin, Germany");
+  const [cvData, setCvData] = useState({title, companyName, startDate, endDate, about, location});
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleSubmit = () => {
     const cvInfo = {
@@ -17,6 +18,7 @@ function Work() {
       startDate,
       endDate,
       about,
+      location,
     };
 
     setCvData(cvInfo);
@@ -26,10 +28,6 @@ function Work() {
   const handleEdit = () => {
     setIsEditing(true); // Enter edit mode
   };
-
-  const handleClickAfterSubmit = () => {
-    setIsEditing(true);
-  }
 
   return (
     <div className='work-info'>
@@ -67,6 +65,12 @@ function Work() {
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
             />
+            <input
+              type="text"
+              placeholder="Location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
           </div>
         ) : (
           <div>
@@ -75,6 +79,7 @@ function Work() {
             <p>About The Job: {cvData ? cvData.about : ""}</p>
             <p>Start Date: {cvData ? cvData.startDate : ""}</p>
             <p>End Date: {cvData ? cvData.endDate : ""}</p>
+            <p>Location: {cvData ? cvData.location : ""}</p>
           </div>
         )}
         <button onClick={isEditing ? handleSubmit : handleEdit}>
@@ -86,11 +91,11 @@ function Work() {
         <h2>Work</h2>
         {cvData ? (
           <div>
-            <p>Title: {cvData.title}</p>
-            <p>Company Name: {cvData.companyName}</p>
-            <p>About The Job: {cvData.about}</p>
-            <p>Start Date: {cvData.startDate}</p>
-            <p>End Date: {cvData.endDate}</p>
+            <p>{cvData.startDate} - {cvData.endDate}</p>
+            <h3>{cvData.companyName}</h3>
+            <p>{cvData.location}</p>
+            <p>{cvData.title}</p>
+            <p>{cvData.about}</p>
           </div>
         ) : (
           <p>Please submit to see your CV preview.</p>

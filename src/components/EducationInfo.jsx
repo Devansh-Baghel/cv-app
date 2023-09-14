@@ -81,8 +81,7 @@ function Education() {
         <h2>Education</h2>
         {cvData ? (
           <div>
-            <p>{cvData.startDate}</p>
-            <p>{cvData.endDate}</p>
+            <p>{cvData.startDate} - {cvData.endDate}</p>
             <h3>{cvData.schoolName}</h3>
             <p>{cvData.location}</p>
             <p>{cvData.title}</p>
