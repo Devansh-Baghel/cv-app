@@ -1,14 +1,14 @@
-#education-info, #work-info, #general-info {
+.education-info, .work-info, .general-info {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#input {
+.input {
   width: 300px;
 }
 
-#preview {
+.preview {
   width: 300px;
 }
 

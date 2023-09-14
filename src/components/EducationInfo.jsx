@@ -25,8 +25,8 @@ function Education() {
   };
 
   return (
-    <div id="education-info">
-      <div id="input">
+    <div className="education-info">
+      <div className="input">
         <h2>Education</h2>
         {isEditing ? (
           <div>
@@ -68,7 +68,7 @@ function Education() {
         </button>
       </div>
 
-      <div id="preview">
+      <div className="preview education-preview">
         <h2>Education</h2>
         {cvData ? (
           <div>

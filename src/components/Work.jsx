@@ -27,9 +27,13 @@ function Work() {
     setIsEditing(true); // Enter edit mode
   };
 
+  const handleClickAfterSubmit = () => {
+    setIsEditing(true);
+  }
+
   return (
-    <div id='work-info'>
-      <div id="input">
+    <div className='work-info'>
+      <div className="input">
         <h2>Work</h2>
         {isEditing ? (
           <div>
@@ -78,7 +82,7 @@ function Work() {
         </button>
       </div>
 
-      <div id='preview'>
+      <div className='preview work-preview'>
         <h2>Work</h2>
         {cvData ? (
           <div>
