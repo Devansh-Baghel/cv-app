@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 function Education() {
-  const [title, setTitle] = useState("");
-  const [schoolName, setSchoolName] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [cvData, setCvData] = useState(null);
-  const [isEditing, setIsEditing] = useState(true);
+  const [title, setTitle] = useState("Bachelors in Economics");
+  const [schoolName, setSchoolName] = useState("London City University");
+  const [startDate, setStartDate] = useState("08/2020");
+  const [endDate, setEndDate] = useState("09/2023");
+  const [location, setLocation] = useState("New York City, US");
+  const [cvData, setCvData] = useState({title, schoolName, startDate, endDate, location});
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleSubmit = () => {
     const cvInfo = {
@@ -14,6 +15,7 @@ function Education() {
       schoolName,
       startDate,
       endDate,
+      location,
     };
 
     setCvData(cvInfo);
@@ -54,6 +56,12 @@ function Education() {
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
             />
+            <input
+              type="text"
+              placeholder="Location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
           </div>
         ) : (
           <div>
@@ -61,6 +69,7 @@ function Education() {
             <p>School Name: {cvData ? cvData.schoolName : ""}</p>
             <p>Start Date: {cvData ? cvData.startDate : ""}</p>
             <p>End Date: {cvData ? cvData.endDate : ""}</p>
+            <p>Location: {cvData ? cvData.location : ""}</p>
           </div>
         )}
         <button onClick={isEditing ? handleSubmit : handleEdit}>
@@ -72,10 +81,11 @@ function Education() {
         <h2>Education</h2>
         {cvData ? (
           <div>
-            <p>Title: {cvData.title}</p>
-            <p>School Name: {cvData.schoolName}</p>
-            <p>Start Date: {cvData.startDate}</p>
-            <p>End Date: {cvData.endDate}</p>
+            <p>{cvData.startDate}</p>
+            <p>{cvData.endDate}</p>
+            <h3>{cvData.schoolName}</h3>
+            <p>{cvData.location}</p>
+            <p>{cvData.title}</p>
           </div>
         ) : (
           <p>Please submit to see your CV preview.</p>
